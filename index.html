@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+    body{
+      font-family: Fraunces;
+      background-color: hsl(30, 38%, 92%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 100px;
+    }
+    .card{
+      width: 600px;
+      height: 480px;
+      display: inline-block;
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 0.5rem;
+      margin-top: 200px;
+    }
+    .left-side{
+      width: 50%;
+      height: 100%;
+      float:left;
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+    }
+    
+    .right-side{
+      width: 50%;
+      height: 100%;
+      float: right;
+      display: block;
+      padding: 2rem;
+      box-sizing: border-box; /* This prevents the overflowing of the right-side box out of the card.*/
+    }
+    .header{
+      width: 180px;
+      font-size: 1.8rem;
+      line-height: 1.9rem;
+      color: hsl(212, 21%, 14%);
+    }
+    .para{
+      width: 260px;
+      font-family: Montserrat;
+      font-size: 0.9rem;
+      line-height: 1.5rem;
+      color: hsl(228, 12%, 48%);
+      margin-bottom: 2rem;
+    }
+    .product{
+      font-family: Montserrat;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      color: hsl(228, 12%, 48%);
+      margin-bottom: 2rem;
+    }
+    .pricing-1{
+      font-size: 2.1rem;
+      font-weight: 650;
+      color: hsl(158, 36%, 37%);
+    }
+    .pricing-2{
+      font-size: 0.9rem;
+      align-self: center;
+      text-decoration: line-through;
+      color: hsl(228, 12%, 48%);
+    }
+    .pricing-container{
+      display: flex;
+      justify-content: flex-start;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .card-button{
+      width: 100%;
+      height: 11%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+      background-color: hsl(158, 36%, 37%);
+      gap: 0.4rem;
+      font-family: Montserrat;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: hsl(0, 0%, 100%);
+      border-radius: 0.5rem;
+    }
+    .card-button:hover{
+      background-color:rgb(1, 75, 41);
+      cursor: pointer;
+    }
+    .left-side{
+      background-image: url(./images/image-product-desktop.jpg);
+      background-size: cover;
+    }
+    @media(max-width:600px){
+      .card{
+        display: block;
+        height: 90vh;
+        width: 80vw;
+        margin-top: 0px;
+        overflow:hidden;
+      }
+      .left-side{
+        height: 40%;
+        width: 100%;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        background-image: url(./images/image-product-mobile.jpg);
+        background-size: cover;
+        border-bottom-left-radius: 0px;
+      }
+      .right-side{
+        height: 60%;
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+      .header{
+        width: 100%;
+      }
+      .para{
+        width: 100%;
+      }
+      .pricing-container{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card"><div class="left-side"></div> <!--This has to be kept empty. I have used background image in CSS instead of providing an <img> directly here because it will make swapping between desktop and mobile images possible. The desktop image has been used outside the @media query and the mobile image is included inside @media.-->
+  <div class="right-side"><div class="product">Perfume</div>
+
+  <h2 class="header">Gabrielle Essence Eau De Parfum </h2>
+
+  <p class="para">A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+  Perfumer-Creator for the House of CHANEL.</p>
+  <div class="pricing-container"><span class="pricing-1">$149.99 </span>
+  <span class="pricing-2">$169.99 </span></div>
+  
+
+  <div class="card-button"><svg width="15" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z" fill="#FFF"/></svg>Add to Cart</div>
+</div>
+</div>
+  
+  
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/Pycoder300">Pycoder</a>.
+  </div>
+</body>
+</html>
